@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+<p class="text-center">{{ expense.first.name.name}}</p> 
+
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Item</th>
+      <th scope="col">Amount</th>
+    </tr>
+  </thead>
+{% for i in expense %}
+  <tbody>
+    <tr>
+      <td>{{ i.exdate}}</td>
+      <td>{{ i.item}}</td>
+      <td><a href="{% url 'delete_expense' i.pk %}">{{ i.amount}}</a></td>
+    </tr>
+  </tbody>
+{% endfor %}
+</table>
+{% endblock %}

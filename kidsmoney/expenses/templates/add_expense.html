@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<title>Expense Details</title> 
+<div class="container">
+
+<form method='POST'> 
+{% csrf_token %}
+{{ form.errors }}
+{{ form.name }}
+
+<br>
+<br>
+
+{{ form.item }}
+<br>
+{{ form.amount }}
+<br>
+{{ form.exdate }}
+<input type="submit" value="Save"/>
+</form>
+
+</div>
+{% endblock %}

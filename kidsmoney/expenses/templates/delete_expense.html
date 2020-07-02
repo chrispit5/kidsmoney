@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<title>Delete Expense</title> 
+<div class="container">
+
+<form action="" method='POST'> 
+
+{% csrf_token %}
+	<h1>Confirm Deletion of "{{ expense.amount }}?"</h1>
+	<p><input type='submit' value='Yes' /><a href="{% url 'home' %}">Cancel</a></p>
+</form>
+
+</div>
+{% endblock %}

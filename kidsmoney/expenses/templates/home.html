@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% with page_title="Home" %}{% endwith %}
+{% block content %}
+
+<div class="container">
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nameff</th>
+      <th scope="col">Balance</th>
+    </tr>
+  </thead>
+  {% for kid in expense %}
+  <tbody>
+    <tr>
+      <td><a href="{% url 'add_expense' kid.pk %}">{{kid.name}}</a></td>
+      <td><a href="{% url 'expense_detail' kid.pk %}">{{kid.expenses__amount__sum|add:kid.startingbalance }}</a></td>
+    </tr>
+  </tbody>
+{%endfor%}
+</table>
+</div>
+{% endblock %}
